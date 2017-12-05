@@ -2,7 +2,7 @@
 * @Author: lenovo
 * @Date:   2017-08-20 18:01:07
 * @Last Modified by:   lenovo
-* @Last Modified time: 2017-12-05 01:01:29
+* @Last Modified time: 2017-12-06 00:59:26
 */
 @import url("base.css");
 body{
@@ -946,6 +946,12 @@ main{
 } */
 .message-main{
     padding: 12px 0;
+}
+.mes-ul{
+    display: none;
+}
+.mi-ms{
+    display: block;
 }
 .message-main ul li{
     line-height: 24px;
@@ -2737,6 +2743,142 @@ footer{
 .jiance a:nth-child(6){
     background: url('../img/ico_footer.png') no-repeat -104px -217px;
 }
+/* 侧栏 */
+.lc{
+    position: fixed;
+    top: 15%;
+    left: 20px;
+    width: 34px;
+    text-align: center;
+}
+.lc ul li:last-child i{
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px;
+    border-color: transparent transparent #fff;
+    margin: 0 auto;
+}
+.lc ul li a{
+    display: block;
+    padding: 7px 5px;
+    font-size: 12px;
+    color: #fff;
+    background: #918888;
+    border-bottom: 1px solid #fff;
+}
+.lc ul li a:hover{
+    background: #d70b1c;
+    border-bottom: 1px solid #c81623；
+}
+.lc ul li:last-child a{
+    background: #5e4a4a;
+}
+.rc_box{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    border-right: 6px solid #7a6e6e;
+    transition: right .3s ease-in-out 0s;
+    position: fixed;
+}
+.rc{
+    position: absolute;
+    top: 50%;
+    left: -29px;
+    width: 35px;
+    margin-top: -61px;
+}
+.rc-li{
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin-bottom: 1px;
+    cursor: pointer;
+    background-color: #7a6e6e;
+    border-radius: 3px 0 0 3px;
+}
+.rc-a{
+    display: block;
+    background: url('../img/toolbars.png') no-repeat;
+    width: 34px;
+    height: 35px;
+    margin-left: 1px;
+    position: relative;
+    z-index: 2;
+    background-color: #7a6e6e;
+}
+.rc-li:hover .rc-a{
+    background-color: #c81623;
+}
+.rc-li:nth-child(1) .rc-a{
+    background-position:-88px -175px ;
+}
+.rc-li:nth-child(2) .rc-a{
+    background-position:-50px 0 ;
+}
+.rc-li:nth-child(3) .rc-a{
+    background-position:-50px -50px ;
+}
+.rc-li:nth-child(4) .rc-a{
+    background-position:-50px -100px ;
+}
+.rc-li:nth-child(5) .rc-a{
+    background-position:-190px -150px;
+}
+.rc-li:nth-child(6) .rc-a{
+    background-position:-50px -150px ;
+}
+.rc-em{
+    width: 62px;
+    height: 35px;
+    line-height: 35px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: 微软雅黑;
+    font-size: 12px;
+    position: absolute;
+    z-index: 1;
+    left: 35px;
+    top: 0px;
+    background-color: rgb(122, 110, 110);
+    border-radius: 3px 0px 0px 3px;
+    transition: left 0.3s ease-in-out 0.1s;
+}
+.rc-li:hover .rc-em{
+    left: -60px;
+    background-color: #c81623;
+}
+.rc_b{
+    position: absolute;
+    bottom: -1px;
+    left: -29px;
+    width: 100%;
+}
+.rc_b ul li:nth-child(1) a{
+    background-position: -50px -250px;
+}
+.rc_b ul li:nth-child(2) a{
+    background-position: -50px -300px;
+}
+.rc_b ul li:nth-child(3) a{
+    background-color: #d70b1c;
+    padding-top: 5px;
+}
+.rc_b ul li a:hover{
+    background-color: #c81623;
+}
+.rc_b ul li .rc-em{
+    width: 50px;
+}
+.rc_b ul li:hover .rc-em{
+    left: -48px;
+    background-color: #c81623;
+}
+/* 侧栏结束 */
 /* 底部结束 */
 @media screen and (min-width:1208px){
 	.gg,main,.banner-main{

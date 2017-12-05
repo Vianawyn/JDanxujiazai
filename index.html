@@ -4543,13 +4543,19 @@
 	    		</div>
 	    		<div class="message">
 	    			<div class="message-title">
-	    				<a href="" class="cuxiao">促销</a>
-	    				<a href="" class="gonggao">公告</a>
+	    				<a href="" class="mes-t cuxiao">促销</a>
+	    				<a href="" class="mes-t gonggao">公告</a>
 	    				<div class="message-tiao"></div>
 	    				<a href="">更多</a>
 	    			</div>
 	    			<div class="message-main">
-	    				<ul>
+	    				<ul class="mes-ul mi-ms">
+	    					<li><a href="">东北地区因降雪天气影响配送延迟</a></li>
+	    					<li><a href="">京东物流推出配送员统一外呼电话"95056”</a></li>
+	    					<li><a href="">天府大件运营中心开仓公告</a></li>
+	    					<li><a href="">京东大件物流“送装一体”服务全面升级</a></li>
+	    				</ul>
+	    				<ul class="mes-ul">
 	    					<li><a href="">东北地区因降雪天气影响配送延迟</a></li>
 	    					<li><a href="">京东物流推出配送员统一外呼电话"95056”</a></li>
 	    					<li><a href="">天府大件运营中心开仓公告</a></li>
@@ -6944,96 +6950,66 @@
 		</div>
 	</footer>
 	<!-- 底部结束 -->
+	<!-- 侧栏 -->
+	<div class="lc">
+		<ul>
+			<li><a href="">享品质</a></li>
+			<li><a href="">服装美妆</a></li>
+			<li><a href="">家电手机</a></li>
+			<li><a href="">电脑数码</a></li>
+			<li><a href="">3C运动</a></li>
+			<li><a href="">爱吃</a></li>
+			<li><a href="">母婴家居</a></li>
+			<li><a href="">图书汽车</a></li>
+			<li><a href="">游戏金融</a></li>
+			<li><a href="">旅行健康</a></li>
+			<li><a href="">还没逛够</a></li>
+			<li><a href="">顶部<i></i></a></li>
+		</ul>
+	</div>
+	<div class="rc_box">
+		<div class="rc">
+			<ul>
+				<li class="rc-li">
+					<a href="" class="rc-a"></a>
+					<em class="rc-em">京东会员</em>
+				</li>
+				<li class="rc-li">
+					<a href="" class="rc-a"></a>
+					<em class="rc-em">购物车</em>
+				</li>
+				<li class="rc-li">
+					<a href="" class="rc-a"></a>
+					<em class="rc-em">我的关注</em>
+				</li> 
+				<li class="rc-li">
+					<a href="" class="rc-a"></a>
+					<em class="rc-em">我的足迹</em>
+				</li>
+				<li class="rc-li">
+					<a href="" class="rc-a"></a>
+					<em class="rc-em">我的消息</em>
+				</li>
+				<li class="rc-li">
+					<a href="" class="rc-a"></a>
+					<em class="rc-em">咨询JIMI</em>
+				</li>
+			</ul>
+		</div>
+		<div class="rc_b">
+			<ul>
+				<li class="rcb-li">
+					<a href="" class="rc-a"></a>
+					<em class="rc-em">顶部</em>
+				</li>
+				<li>
+					<a href="" class="rc-a"></a>
+					<em class="rc-em">反馈</em>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 侧栏结束 -->
 </body>
 </html>
-<script>
-	window.onload = function(){
-		//按需加载
-		var flow = document.getElementsByClassName('flow');	
-		window.onscroll = function(){
-			var top = document.documentElement.scrollTop || document.body.scrollTop || window.scrollY || window.pageYOffset;
-			for(var i = 0;i < flow.length;i++){
-				var ftop = flow[i].offsetTop;
-				var img = flow[i].getElementsByTagName('img');
-				if(top > ftop - 300){
-					for(var j = 0;j < img.length;j++){
-						var dizhi = img[j].getAttribute('attr');
-						img[j].src = dizhi;
-					}
-				}
-			}
-		}
-		//侧导航
-		let title = document.getElementsByClassName('aside-ul-li');
-		// console.log(title);
-		let con = document.getElementsByClassName('jdaside-box');
-		// console.log(con);
-		for(let i = 0;i < title.length;i++){
-			title[i].onmouseover = function(){
-				for(let j = 0;j < con.length;j++){
-					con[j].classList.remove('con-active');
-				}
-				con[i].classList.add('con-active');
-			}
-			title[i].onmouseout = function(){
-				for(let j = 0;j < con.length;j++){
-					con[j].classList.remove('con-active');
-				}
-			}
-		}
-		//地标
-		let dbox = document.getElementsByClassName('nav-left-box');
-		// console.log(dbox);
-		let db = document.getElementsByClassName('nav-city');
-		// console.log(db);
-		for(let i = 0;i < dbox.length;i++){
-			dbox[i].onmouseover = function(){
-				for(let j = 0;j < db.length;j++){
-					db[j].classList.remove('con-active');
-				}
-				db[i].classList.add('con-active');
-			}
-			dbox[i].onmouseout = function(){
-				for(let j = 0;j < db.length;j++){
-					db[j].classList.remove('con-active');
-				}
-			}
-		}
-		//我的京东 客户服务 网站导航
-		let wdjdbox = document.getElementsByClassName('bai');
-		// console.log(wdjdbox);
-		let wdjd = document.getElementsByClassName('myjd-box');
-		// console.log(wdjd);
-		for(let i = 0;i < wdjdbox.length;i++){
-			wdjdbox[i].onmouseover = function(){
-				for(let j = 0;j < wdjd.length;j++){
-					wdjd[j].classList.remove('con-active');
-				}
-				wdjd[i].classList.add('con-active');
-			}
-			wdjdbox[i].onmouseout = function(){
-				for(let j = 0;j < wdjd.length;j++){
-					wdjd[j].classList.remove('con-active');
-				}
-			}
-		}
-		//手机京东
-		let sjjdbox = document.getElementsByClassName('sjjd-box');
-		// console.log(sjjdbox);
-		let sjjd = document.getElementsByClassName('sjjd');
-		// console.log(sjjd);
-		for(let i = 0;i < sjjdbox.length;i++){
-			sjjdbox[i].onmouseover = function(){
-				for(let j = 0;j < sjjd.length;j++){
-					sjjd[j].classList.remove('con-active');
-				}
-				sjjd[i].classList.add('con-active');
-			}
-			sjjdbox[i].onmouseout = function(){
-				for(let j = 0;j < sjjd.length;j++){
-					sjjd[j].classList.remove('con-active');
-				}
-			}
-		}
-	}
-</script>
+<script src="js/index.js"></script>
