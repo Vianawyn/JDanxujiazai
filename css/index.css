@@ -2,7 +2,7 @@
 * @Author: lenovo
 * @Date:   2017-08-20 18:01:07
 * @Last Modified by:   lenovo
-* @Last Modified time: 2017-12-06 00:59:26
+* @Last Modified time: 2017-12-06 23:17:03
 */
 @import url("base.css");
 body{
@@ -627,6 +627,9 @@ main{
     height: 28px;
     line-height: 28px;
 }
+.aside-ul-li:hover{
+    background: #999395;
+}
 .aside-ul-li a{
 	font-size: 14px;
     color: #fff;
@@ -953,17 +956,17 @@ main{
 .mi-ms{
     display: block;
 }
-.message-main ul li{
+.mes-ul li{
     line-height: 24px;
     max-width: 160px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-.message-main ul li a{
+.mes-ul li a{
     color: #666;
 }
-.message-main ul li a:hover{
+.mes-ul li a:hover{
     color: #c81623;
 }
 /* 服务 */
@@ -1617,6 +1620,10 @@ main{
 }
 .phb-shop{
     padding: 10px;
+    display: none;
+}
+.phb-mi{
+    display: block;
 }
 .phb-shop ul li{
     position: relative;
@@ -2743,6 +2750,59 @@ footer{
 .jiance a:nth-child(6){
     background: url('../img/ico_footer.png') no-repeat -104px -217px;
 }
+/* 活动搜索框 */
+.search_fix{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: 2px solid #f10214;
+    background-color: #fff;
+    animation: searchfixTop .5s ease-in-out;
+    opacity: 0;
+}
+@keyframes searchfixTop{
+    0%{
+        top: -50px;
+    }
+    100%{
+        top: 0;
+    }
+}
+.search_fix_main{
+    margin: auto;
+    width: 1190px;
+    height: 48px;
+    position: relative;
+    z-index: 1;
+}
+.search_fix_logo{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 125px;
+    height: 40px
+}
+.search_fix_logo_img{
+    display: block;
+    width: 125px;
+    height: 40px;
+    background: url('../img/search_fix_logo.png') no-repeat;
+    overflow: hidden;
+}
+.search_fix_main .form{
+    left: 320px;
+    width: 550px;
+    top: 6px;
+}
+.search_fix_main .form .search-text{
+    border-color: #efefef;
+    background-color: #efefef;
+    color: rgb(153, 153, 153);
+}
+/* 活动搜索框结束 */
 /* 侧栏 */
 .lc{
     position: fixed;
@@ -2750,6 +2810,8 @@ footer{
     left: 20px;
     width: 34px;
     text-align: center;
+    opacity: 0;
+    transition: all .5s;
 }
 .lc ul li:last-child i{
     display: block;
@@ -2784,6 +2846,7 @@ footer{
     border-right: 6px solid #7a6e6e;
     transition: right .3s ease-in-out 0s;
     position: fixed;
+    z-index: 2;
 }
 .rc{
     position: absolute;

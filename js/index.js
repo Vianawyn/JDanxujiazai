@@ -1,8 +1,11 @@
 window.onload = function(){
-	//按需加载
+	//按需加载图片     活动搜索框      左侧栏
 	var flow = document.getElementsByClassName('flow');	
+	let searchf = document.getElementsByClassName('search_fix')[0];
+	let lc = document.querySelector('.lc');
 	window.onscroll = function(){
 		var top = document.documentElement.scrollTop || document.body.scrollTop || window.scrollY || window.pageYOffset;
+		//按需加载图片
 		for(var i = 0;i < flow.length;i++){
 			var ftop = flow[i].offsetTop;
 			var img = flow[i].getElementsByTagName('img');
@@ -12,6 +15,18 @@ window.onload = function(){
 					img[j].src = dizhi;
 				}
 			}
+		}
+		//活动搜索框
+		if(top > 700){
+			searchf.style.opacity = '1';
+		}else{
+			searchf.style.opacity = '0';
+		}
+		//左侧栏
+		if(top > 2300){
+			lc.style.opacity = '1';
+		}else{
+			lc.style.opacity = '0';
 		}
 	}
 	//侧导航
@@ -86,6 +101,7 @@ window.onload = function(){
 			}
 		}
 	}
+	//用户：促销公告
 	/*1.初始化CSS
 		选项卡  display:block;
 	2.获取元素
@@ -112,5 +128,24 @@ window.onload = function(){
 				mm[j].classList.add('mi-ms');
 			}
 		}
+	}
+	//排行榜
+	let phb = document.getElementsByClassName('phb-box');
+	for(let i = 0; i < phb.length;i++){
+		let pt = phb[i].getElementsByClassName('phb-t');
+		let ps = phb[i].getElementsByClassName('phb-shop');
+		for(let j = 0; j < pt.length;j++){
+			pt[j].onmouseover = function(){
+				for(let k = 0; k < ps.length;k++){
+					ps[k].classList.remove('phb-mi');
+				}
+				ps[j].classList.add('phb-mi');
+			}
+		}
+	}
+	//返回顶部
+	let top = document.getElementsByClassName('rc-a-top');
+	top.onclick = function(){
+		window.scroll(0,0);
 	}
 }
